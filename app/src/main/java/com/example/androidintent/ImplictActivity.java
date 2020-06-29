@@ -23,10 +23,10 @@ public class ImplictActivity extends AppCompatActivity {
     }
     //function to open webpage
 
-    private void openWebPage(String url){
+    private void openWebPage(String url) {
         Uri webpage = Uri.parse(url);
-        Intent intent = new Intent(Intent.ACTION_VIEW,webpage);
-        if (intent.resolveActivity(getPackageManager())!=null){
+        Intent intent = new Intent(Intent.ACTION_VIEW, webpage);
+        if (intent.resolveActivity(getPackageManager()) != null) {
             startActivity(intent);
         }
 
@@ -35,16 +35,16 @@ public class ImplictActivity extends AppCompatActivity {
     public void onClickOpenADDRESSButton(View view) {
         String addressString = "Nagarjun";
         Uri.Builder builder = new Uri.Builder();
-        builder.scheme("geo").path("0,0").appendQueryParameter("q",addressString);
+        builder.scheme("geo").path("0,0").appendQueryParameter("q", addressString);
         Uri addressUri = builder.build();
         openMap(addressUri);
 
     }
 
     //function open map
-    private void openMap(Uri geoLocation){
-        Intent intent = new Intent(Intent.ACTION_VIEW,geoLocation);
-        if (intent.resolveActivity(getPackageManager())!=null){
+    private void openMap(Uri geoLocation) {
+        Intent intent = new Intent(Intent.ACTION_VIEW, geoLocation);
+        if (intent.resolveActivity(getPackageManager()) != null) {
             startActivity(intent);
         }
     }
@@ -54,7 +54,8 @@ public class ImplictActivity extends AppCompatActivity {
         openShareText(shretext);
 
     }
-    public void openShareText(String shareText){
+
+    public void openShareText(String shareText) {
         String mimeType = "text/plain";
         String title = "Learning To Share Intents";
         ShareCompat.IntentBuilder
